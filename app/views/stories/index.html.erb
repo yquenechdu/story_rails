@@ -1,0 +1,33 @@
+<h1>Listing stories</h1>
+
+<table>
+  <tr>
+    <th>Role</th>
+    <th>Action</th>
+    <th>Confirmation</th>
+    <th>Count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stories.each do |story| %>
+  <tr>
+    <td><%= story.role %></td>
+    <td><%= story.action %></td>
+    <td><%= story.confirmation %></td>
+    <td><%= story.bdds.count %></td>
+    <td><%= link_to 'Show', story, :class => "btn_show" %></td>
+    <td><%= link_to 'Edit', edit_story_path(story) %></td>
+    <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Story', new_story_path %>
+
+<div id="new_story">
+	
+</div>

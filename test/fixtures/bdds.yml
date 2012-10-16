@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  give: MyString
+  when: MyString
+  then: MyString
+  story_id: MyString
+
+two:
+  give: MyString
+  when: MyString
+  then: MyString
+  story_id: MyString

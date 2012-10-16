@@ -1,0 +1,32 @@
+<%= simple_form_for(@story) do |f| %>
+  <% if @story.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+      <ul>
+      <% @story.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+	<%= f.input :role, :label => "Je suis", :placeholder => "un utilisateur" %>
+	<%= f.input :action %>
+	<%= f.input :confirmation %>
+	
+	<div class="bdds">
+	<p>
+		<%= f.simple_fields_for :bdds do |bdds_form| %>
+			<%= bdds_form.input :given %>
+			<%= bdds_form.input :when %>
+			<%= bdds_form.input :then %>
+		<% end %>
+	</p>
+	</div><p>	
+	<%= f.simple_fields_for :cas do |cas_form| %>
+		<%= cas_form.input :criteria %>
+	<% end %>
+</p>	
+<%= f.button :submit %>
+<% end %>

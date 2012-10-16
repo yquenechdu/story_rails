@@ -1,0 +1,29 @@
+<h1>Listing bdds</h1>
+
+<table>
+  <tr>
+    <th>Give</th>
+    <th>When</th>
+    <th>Then</th>
+    <th>Story</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @bdds.each do |bdd| %>
+  <tr>
+    <td><%= bdd.give %></td>
+    <td><%= bdd.when %></td>
+    <td><%= bdd.then %></td>
+    <td><%= bdd.story_id %></td>
+    <td><%= link_to 'Show', bdd %></td>
+    <td><%= link_to 'Edit', edit_bdd_path(bdd) %></td>
+    <td><%= link_to 'Destroy', bdd, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Bdd', new_bdd_path %>

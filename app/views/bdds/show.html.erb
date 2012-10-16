@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Give:</b>
+  <%= @bdd.give %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= @bdd.when %>
+</p>
+
+<p>
+  <b>Then:</b>
+  <%= @bdd.then %>
+</p>
+
+<p>
+  <b>Story:</b>
+  <%= @bdd.story_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_bdd_path(@bdd) %> |
+<%= link_to 'Back', bdds_path %>

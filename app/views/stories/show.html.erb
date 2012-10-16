@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Role:</b>
+  <%= @story.role %>
+</p>
+
+<p>
+  <b>Action:</b>
+  <%= @story.action %>
+</p>
+
+<p>
+  <b>Confirmation:</b>
+  <%= @story.confirmation %>
+</p>
+
+  <% @story.bdds.each do |bdd| %>
+
+<p>
+  <b>Given:</b>
+  <%= bdd.given %>
+</p>
+
+<p>
+  <b>When:</b>
+  <%= bdd.when %>
+</p>
+
+<p>
+  <b>Then:</b>
+  <%= bdd.then %>
+</p>
+
+  <% end %>
+
+<% @story.cas.each do |ca| %>
+
+<p>
+  <b>CA:</b>
+  <%= ca.criteria %>
+</p>
+
+<% end %>
+
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
