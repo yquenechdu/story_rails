@@ -1,48 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Role:</b>
+  <b>Je suis:</b>
   <%= @story.role %>
 </p>
 
 <p>
-  <b>Action:</b>
+  <b>Je veux:</b>
   <%= @story.action %>
 </p>
 
 <p>
-  <b>Confirmation:</b>
+  <b>Afin de:</b>
   <%= @story.confirmation %>
 </p>
 
-  <% @story.bdds.each do |bdd| %>
-
-<p>
-  <b>Given:</b>
-  <%= bdd.given %>
-</p>
-
-<p>
-  <b>When:</b>
-  <%= bdd.when %>
-</p>
-
-<p>
-  <b>Then:</b>
-  <%= bdd.then %>
-</p>
-
-  <% end %>
 
 <% @story.cas.each do |ca| %>
-
+<br>
 <p>
-  <b>CA:</b>
+  <b>Critères d'acceptation:</b>
   <%= ca.criteria %>
 </p>
 
 <% end %>
 
+<br>
 
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+  <% @story.bdds.each do |bdd| %>
+<p>
+  <b>Etant donné que:</b>
+  <%= bdd.given %>
+</p>
+
+<p>
+  <b>Lorsque:</b>
+  <%= bdd.when %>
+</p>
+
+<p>
+  <b>Alors:</b>
+  <%= bdd.then %>
+</p>
+<br>
+  <% end %>
+
+
+<%= link_to 'Editer', edit_story_path(@story) %> |
+<%= link_to 'Retour', stories_path %>

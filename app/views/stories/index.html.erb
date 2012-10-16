@@ -1,11 +1,11 @@
-<h1>Listing stories</h1>
+<h1>Liste des users stories</h1>
 
 <table>
   <tr>
-    <th>Role</th>
-    <th>Action</th>
-    <th>Confirmation</th>
-    <th>Count</th>
+    <th>Je suis</th>
+    <th>Je veux</th>
+    <th>Afin de</th>
+    <th>Nb de BDD</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,16 +17,16 @@
     <td><%= story.action %></td>
     <td><%= story.confirmation %></td>
     <td><%= story.bdds.count %></td>
-    <td><%= link_to 'Show', story, :class => "btn_show" %></td>
-    <td><%= link_to 'Edit', edit_story_path(story) %></td>
-    <td><%= link_to 'Destroy', story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Afficher', story, :class => "btn_show" %></td>
+    <td><%= link_to 'Editer', edit_story_path(story) %></td>
+    <td><%= link_to 'Supprimer', story, method: :delete, data: { confirm: 'Etes vous sur ?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Story', new_story_path %>
+<%= link_to 'Nouvelle Story', new_story_path %>
 
 <div id="new_story">
 	

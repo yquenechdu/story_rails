@@ -12,21 +12,23 @@
   <% end %>
 
 	<%= f.input :role, :label => "Je suis", :placeholder => "un utilisateur" %>
-	<%= f.input :action %>
-	<%= f.input :confirmation %>
-	
+	<%= f.input :action, :label => "Je veux", :placeholder => "accéder à ma réservation"%>
+	<%= f.input :confirmation, :label => "Afin de", :placeholder => "d'annuler ma réservation"%>
+	<br>
+	<p>	
+	<%= f.simple_fields_for :cas do |cas_form| %>
+		<%= cas_form.input :criteria, :label => "Critères d'acceptation", :placeholder => "je dois recevoir un mail qui confirme mon annulation"%>
+	<% end %>
+    </p>
+	<b>BDD</b><br>
 	<div class="bdds">
 	<p>
 		<%= f.simple_fields_for :bdds do |bdds_form| %>
-			<%= bdds_form.input :given %>
-			<%= bdds_form.input :when %>
-			<%= bdds_form.input :then %>
+			<%= bdds_form.input :given, :label => "Etant donné que", :placeholder => "Je suis un auteur et que je suis sur la page de réservation" %>
+			<%= bdds_form.input :when, :label => "Lorsque", :placeholder => "je sélectionne une réservation et que j'appui sur le bouton annuler" %>
+			<%= bdds_form.input :then, :label => "Alors", :placeholder => "Je dois recevoir une mail qui confirme ma demande d'annulation et la ligne disparait de la réservation" %>
 		<% end %>
 	</p>
-	</div><p>	
-	<%= f.simple_fields_for :cas do |cas_form| %>
-		<%= cas_form.input :criteria %>
-	<% end %>
-</p>	
+	</div>
 <%= f.button :submit %>
 <% end %>
